@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>senate-113</title>
+    <link rel="stylesheet" href="congress-table-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <nav class="shadow navbar navbar-expand-lg navbar-light bg-light darkBottom col-sm-2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Congress 113
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="senate-data.html">Senate</a>
+                        <a class="dropdown-item" href="house-data.html">House</a>
+                        <a class="dropdown-item" href="#">Select a different Congress</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="info@tgif.net" src="#"><img src="mail-icon.jpg" class="tiny" alt="mail"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div id="container" class="container">
+
+        <div class="row sticky-top">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3"><h2>SENATE</h2></div>
+            <div class="col-sm 4 navcolor"></div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 midnight"></div>
+        
+            <div id="filterBar" class="col-sm-8 d-flex flex-row align-items-end">
+                <div class="form-group col-sm-6">
+                    <label class="huh" for="checkboxes"> PARTY</label>
+                    <div>
+                        <label for="">Republican</label>
+                        <input type="checkbox" name="politcal_party" value="R" checked onchange="myFunction()">
+                        <label for="">Democrat</label>
+                        <input type="checkbox" name="politcal_party" value="D" checked onchange="myFunction()">
+                        <label for="">Independent</label>
+                        <input type="checkbox" name="politcal_party" value="I" checked onchange="myFunction()">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class = "huh" for="exampleFormControlSelect1"> STATE</label>
+                    <select class="form-control" id="states" name="state" onchange="myFunction()">
+
+                    </select>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="row padder">
+            <div class="col-sm-1">
+
+            </div>
+            <div class="col-sm-3 stars">
+                <div class="col-sm-1">
+
+                </div>
+            </div>
+            <div id="tableZone" class="col-sm-7 table"></div>
+
+
+        </div>
+
+        <footer class="well jumbotron row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4"><a href="#"><img src="uncle-sam-hat.png" alt="logo" class="align-middle logo"></a></div>
+            <div class="col-sm-6">
+                <h1 class="footie">@2018 TGIF all rights reserved.</h1>
+            </div>
+
+        </footer>
+
+        <script src="pro-congress-113-senate.js"> </script>
+        
+        <script src="US-states.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="table-power.js"> </script>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+tr{
+    border-radius: 6px; 
+}
+
+table{
+    text-align: center;
+    border-color: red !important; 
+}
+
+.tiny {
+    width:40px;
+    margin-right: 7px; 
+}
+
+.darkBottom {
+    border: solid 5px dimgrey;
+}
+thead{
+    font-weight: bold;
+}
+
+
+.stars {
+    background-image: url(white-stars.jpg);
+    background-repeat: repeat;
+   
+}
+.red {
+    background-color: #BF0A30;
+}
+.grey{
+    background-color: gainsboro;
+}
+
+.white{
+    background-color: white;
+}
+.logo {
+    width: 170px;
+    filter:grayscale(95%);
+}
+
+.navSep {
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+}
+
+
+a{
+     color: black !important;
+}
+   
+}
+.top-space {
+   
+    padding-top: 15px; 
+    margin-top: 15px; 
+    padding-bottom: 15px; 
+    margin-bottom: 15px; 
+}
+
+label{
+    color: red;
+}
+
+
+.footie {
+    text-align: center; 
+    justify-content: flex-end; 
+}
+
+
+.top-right {
+      top: 15px;
+    right: 1%; 
+   position: fixed;
+}
+
+
+
+.navcolor {
+    border-bottom: solid red 50px;
+}
+
+.midnight {
+    background-color: #212177;
+}
+
+.huh {
+    color: black;
+    font-weight: bold;
+    align-content: center; 
+   margin-left: 40%
+}
