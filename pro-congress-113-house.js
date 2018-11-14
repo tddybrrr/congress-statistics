@@ -54,8 +54,8 @@ var data =
                  "state": "LA",
                  "district": "5",
                  "at_large": false,
-                 "geoid": "2205"
-                 ,"missed_votes_pct": 0.71,
+                 "geoid": "2205",
+                 "missed_votes_pct": 0.71,
                  "votes_with_party_pct": 96.87
                },
                            {

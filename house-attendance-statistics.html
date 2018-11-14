@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>sentate-loyality</title>
+    <title>house-attendance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -11,36 +11,36 @@
 <body>
     <div class="container">
         <nav>
-        <div>
             <div>
-                <a href="https://www.reddit.com/r/politics">TGIF</a>
-            </div>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li>
-                    <a href="https://www.propublica.org/">Congress 113</a>
-                    <ul>
-                        <li><a href="senate-data.html">Senate</a></li>
-                        <li><a href="house-data.html">House</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Attendance</a></li>
+                <div>
+                    <a href="https://www.reddit.com/r/politics">TGIF</a>
+                </div>
                 <ul>
-                    <li><a href="senate-attendance-statistics.html">Senate</a></li>
-                    <li><a href="house-attendance-statistics.html">House</a></li>
-                </ul>
-
-                <li>
-                    <a href="#">Party Loyalty</a>
+                    <li><a href="home.html">Home</a></li>
+                    <li>
+                        <a href="https://www.propublica.org/">Congress 113</a>
+                        <ul>
+                            <li><a href="senate-data.html">Senate</a></li>
+                            <li><a href="house-data.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Attendance</a></li>
                     <ul>
-                        <li><a href="senate-party-loyalty.html">Senate</a></li>
-                        <li><a href="house-party-loyalty.html">House</a></li>
+                        <li><a href="senate-attendance-statistics.html">Senate</a></li>
+                        <li><a href="house-attendance-statistics.html">House</a></li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
+                    <li>
+                        <a href="#">Party Loyalty</a>
+                        <ul>
+                            <li><a href="senate-party-loyalty.html">Senate</a></li>
+                            <li><a href="house-party-loyalty.html">House</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
         <header>
@@ -49,11 +49,13 @@
         </header>
         <!--Table container-->
         <div>
-            <h2>Party Loyalty</h2>
-            <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+            <h2>Attendance</h2>
+            <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
 
-            <h2>Senate at a glance</h2>
-            <table class="table">
+            <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+
+            <h2>House at a glance</h2>
+            <table class = "table">
                 <thead>
                     <tr>
                         <th>Party</th>
@@ -61,7 +63,7 @@
                         <th>% Voted with Prty</th>
                     </tr>
                 </thead>
-                <tbody id="atGlance">
+                <tbody id = "atGlance">
                     <tr>
                         <td>Republican</td>
                         <td>--</td>
@@ -80,16 +82,16 @@
                 </tbody>
             </table>
 
-            <h2>Most Loyal (Top 10% of Party)</h2>
-            <table class="table">
+            <h2>Least Engaged (Bottom 10% Attendance)</h2>
+            <table class = "table">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Number Party Votes</th>
-                        <th>% Party Votes</th>
+                        <th>Number of Missed Votes</th>
+                        <th>% Missed</th>
                     </tr>
                 </thead>
-                <tbody id="leastLoyal">
+                <tbody  id = "leastEngaged">
                     <tr>
                         <td>--</td>
                         <td>--</td>
@@ -123,16 +125,16 @@
                 </tbody>
             </table>
 
-            <h2>Least Loyal (Bottom 10% of Party)</h2>
-            <table class="table">
+            <h2>Most Engaged (Top 10% Attendance)</h2>
+            <table class = "table">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Number Party Votes</th>
-                        <th>% Party Votes</th>
+                        <th>Number of Missed Votes</th>
+                        <th>% Missed</th>
                     </tr>
                 </thead>
-                <tbody id="mostLoyal">
+                <tbody id = "mostEngaged">
                     <tr>
                         <td>--</td>
                         <td>--</td>
@@ -173,9 +175,9 @@
 
         </div>
 
-        <script src="/pro-congress-113-senate.js"></script>
+         <script src="/pro-congress-113-house.js"></script>
 
-        <script src="loyalty-functions.js"></script>
+        <script src="attendance-functions.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
