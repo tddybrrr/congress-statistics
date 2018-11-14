@@ -42,7 +42,7 @@
 
         <div class="row sticky-top">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3"><h2>HOUSE</h2></div>
+            <div class="col-sm-3" id="house"><h2>HOUSE</h2></div>
             <div class="col-sm 4 navcolor"></div>
 
 
@@ -56,16 +56,16 @@
                     <label class="huh" for="checkboxes"> PARTY</label>
                     <div>
                         <label for="">Republican</label>
-                        <input type="checkbox" name="politcal_party" value="R" checked onchange="myFunction()">
+                        <input type="checkbox" name="politcal_party" id="R" value="R" checked>
                         <label for="">Democrat</label>
-                        <input type="checkbox" name="politcal_party" value="D" checked onchange="myFunction()">
+                        <input type="checkbox" name="politcal_party" id="D" value="D" checked>
                         <label for="">Independent</label>
-                        <input type="checkbox" name="politcal_party" value="I" checked onchange="myFunction()">
+                        <input type="checkbox" name="politcal_party" id="I" value="I" checked>
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
                     <label class = "huh" for="exampleFormControlSelect1"> STATE</label>
-                    <select class="form-control" id="states" name="state" onchange="myFunction()">
+                    <select class="form-control" id="states" name="state">
 
                     </select>
                 </div>
@@ -96,8 +96,6 @@
             </div>
 
         </footer>
-
-        <script src="pro-congress-113-house.js"></script>
 
         <script src="US-states.js"></script>
         
