@@ -1,3 +1,38 @@
+if (document.getElementById("senate") == null) {
+
+    fetch('https://api.propublica.org/congress/v1/115/house/members.json', {
+            headers: new Headers({
+                "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
+            })
+        })
+        .then(function (response) {
+
+            return response.json()
+        })
+        .then(function (data) {
+            leastLoyalTable(data)
+            mostLoyalTable(data)
+            atGlanceTable(data)
+        })
+
+
+} else {
+    fetch('https://api.propublica.org/congress/v1/115/senate/members.json', {
+            headers: new Headers({
+                "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
+            })
+        })
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            leastLoyalTable(data)
+            mostLoyalTable(data)
+            atGlanceTable(data)
+        })
+}
+
+
 var statistics = {
 
     "parties": [
@@ -88,7 +123,7 @@ function sortByKey(array, key) {
     });
 }
 
-function atGlanceTable() {
+function atGlanceTable(data) {
     var atGlanceBody = document.getElementById("atGlance")
     atGlanceBody.innerHTML = ""
 
@@ -119,7 +154,7 @@ function atGlanceTable() {
     }
 }
 
-function leastLoyalTable() {
+function leastLoyalTable(data) {
     var leastLoyal = document.getElementById("leastLoyal")
     leastLoyal.innerHTML = ""
 
@@ -143,7 +178,7 @@ function leastLoyalTable() {
     }
 }
 
-function mostLoyalTable() {
+function mostLoyalTable(data) {
     var atGlanceBody = document.getElementById("mostLoyal")
     mostLoyal.innerHTML = ""
 
@@ -166,8 +201,3 @@ function mostLoyalTable() {
         }
     }
 }
-
-
-leastLoyalTable()
-mostLoyalTable()
-atGlanceTable()
