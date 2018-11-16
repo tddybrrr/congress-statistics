@@ -10,9 +10,12 @@ if (document.getElementById("senate") == null) {
             return response.json()
         })
         .then(function (data) {
-            leastLoyalTable(data)
-            mostLoyalTable(data)
-            atGlanceTable(data)
+
+            var someStats = generateStatistics(data)
+            
+            atGlanceTable(someStats)
+            leastLoyalTable(someStats)
+            mostLoyalTable(someStats)
         })
 
 
@@ -26,42 +29,49 @@ if (document.getElementById("senate") == null) {
             return response.json()
         })
         .then(function (data) {
-            leastLoyalTable(data)
-            mostLoyalTable(data)
-            atGlanceTable(data)
+        
+        var someStats = generateStatistics(data)
+        
+       
+            atGlanceTable(someStats)
+            leastLoyalTable(someStats)
+            mostLoyalTable(someStats)
         })
 }
 
 
-var statistics = {
+function generateStatistics(data){
+           return statistics = {
 
-    "parties": [
+                "parties": [
 
-        {
-            "numberInParty": listOfMembers("D").length,
-            "list_of_members": listOfMembers("D"),
-            "votedWithParty": AverageVotesWithParty("D"),
-            "leastLoyal": worstTen("D"),
-            "mostLoyal": bestTen("D")
+                    {
+                        "numberInParty": listOfMembers("D", data).length,
+                        "list_of_members": listOfMembers("D", data),
+                        "votedWithParty": AverageVotesWithParty("D", data),
+                        "leastLoyal": worstTen("D", data),
+                        "mostLoyal": bestTen("D", data)
         },
-        {
-            "numberInParty": listOfMembers("R").length,
-            "list_of_members": listOfMembers("R"),
-            "votedWithParty": AverageVotesWithParty("R"),
-            "leastLoyal": worstTen("R"),
-            "mostLoyal": bestTen("R")
+                    {
+                        "numberInParty": listOfMembers("R", data).length,
+                        "list_of_members": listOfMembers("R", data),
+                        "votedWithParty": AverageVotesWithParty("R", data),
+                        "leastLoyal": worstTen("R", data),
+                        "mostLoyal": bestTen("R", data)
         },
-        {
-            "numberInParty": listOfMembers("I").length,
-            "list_of_members": listOfMembers("I"),
-            "votedWithParty": AverageVotesWithParty("I"),
-            "leastLoyal": worstTen("I"),
-            "mostLoyal": bestTen("I")
+                    {
+                        "numberInParty": listOfMembers("I", data).length,
+                        "list_of_members": listOfMembers("I", data),
+                        "votedWithParty": AverageVotesWithParty("I", data),
+                        "leastLoyal": worstTen("I", data),
+                        "mostLoyal": bestTen("I", data)
         }
     ]
+            }
 }
 
-function listOfMembers(partyInitial) {
+
+function listOfMembers(partyInitial, data) {
 
     var filteredByParty = data.results[0].members.filter(function (person) {
 
@@ -69,13 +79,12 @@ function listOfMembers(partyInitial) {
     });
     return filteredByParty;
 
-
 }
 
-function AverageVotesWithParty(partyInitial) {
+function AverageVotesWithParty(partyInitial, data) {
     var totalVotePercentage = 0;
 
-    var filteredByParty = listOfMembers(partyInitial)
+    var filteredByParty = listOfMembers(partyInitial, data)
 
     for (i = 0; i < filteredByParty.length; i++) {
         totalVotePercentage += filteredByParty[i].votes_with_party_pct
@@ -83,9 +92,9 @@ function AverageVotesWithParty(partyInitial) {
     return totalVotePercentage / filteredByParty.length
 }
 
-function worstTen(partyInitial) {
+function worstTen(partyInitial, data) {
 
-    var filteredByParty = listOfMembers(partyInitial);
+    var filteredByParty = listOfMembers(partyInitial, data);
     var people = sortByKey(filteredByParty, 'votes_with_party_pct')
     people.reverse()
     var worstPeople = []
@@ -100,9 +109,9 @@ function worstTen(partyInitial) {
     return worstPeople;
 }
 
-function bestTen(partyInitial) {
+function bestTen(partyInitial, data) {
 
-    var filteredByParty = listOfMembers(partyInitial);
+    var filteredByParty = listOfMembers(partyInitial, data);
     var people = sortByKey(filteredByParty, 'votes_with_party_pct')
     var bestPeople = []
     var counter = 0;

@@ -1,25 +1,72 @@
-var statistics = {
+if (document.getElementById("senate") == null) {
 
-    "parties": [
+    fetch('https://api.propublica.org/congress/v1/115/house/members.json', {
+            headers: new Headers({
+                "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
+            })
+        })
+        .then(function (response) {
 
-        {
-            "numberInParty": listOfMembers("D").length,
-            "list_of_members": listOfMembers("D"),
-            "votedWithParty": AverageVotesWithParty("D"),
-            "leastLoyal": leastLoyal("D"),
-            "mostLoyal": mostLoyal("D")
-        },
-        {
-            "numberInParty": listOfMembers("R").length,
-            "list_of_members": listOfMembers("R"),
-            "votedWithParty": AverageVotesWithParty("R"),
-            "leastLoyal": leastLoyal("R"),
-            "mostLoyal": mostLoyal("R")
-        }
-    ]
+            return response.json()
+        })
+        .then(function (data) {
+
+            var someStats = generateStatistics(data)
+
+            atGlanceTable(someStats)
+            mostEngagedTable(someStats)
+            leastEngagedTable(someStats)
+        })
+
+
+} else {
+    fetch('https://api.propublica.org/congress/v1/115/senate/members.json', {
+            headers: new Headers({
+                "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
+            })
+        })
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+
+            var someStats = generateStatistics(data)
+
+
+            atGlanceTable(someStats)
+            mostEngagedTable(someStats)
+            leastEngagedTable(someStats)
+        })
 }
 
-function listOfMembers(partyInitial) {
+
+function generateStatistics(data) {
+
+    return statistics = {
+
+        "parties": [
+
+            {
+                "numberInParty": listOfMembers("D", data).length,
+                "list_of_members": listOfMembers("D", data),
+                "votedWithParty": AverageVotesWithParty("D", data),
+                "leastLoyal": leastLoyal("D", data),
+                "mostLoyal": mostLoyal("D", data)
+        },
+            {
+                "numberInParty": listOfMembers("R", data).length,
+                "list_of_members": listOfMembers("R", data),
+                "votedWithParty": AverageVotesWithParty("R", data),
+                "leastLoyal": leastLoyal("R", data),
+                "mostLoyal": mostLoyal("R", data)
+        }
+    ]
+    }
+
+}
+
+
+function listOfMembers(partyInitial, data) {
 
     var filteredByParty = data.results[0].members.filter(function (person) {
 
@@ -27,13 +74,12 @@ function listOfMembers(partyInitial) {
     });
     return filteredByParty;
 
-
 }
 
-function AverageVotesWithParty(partyInitial) {
+function AverageVotesWithParty(partyInitial, data) {
     var totalVotePercentage = 0;
 
-    var filteredByParty = listOfMembers(partyInitial)
+    var filteredByParty = listOfMembers(partyInitial, data)
 
     for (i = 0; i < filteredByParty.length; i++) {
         totalVotePercentage += filteredByParty[i].votes_with_party_pct
@@ -41,9 +87,9 @@ function AverageVotesWithParty(partyInitial) {
     return totalVotePercentage / filteredByParty.length
 }
 
-function leastLoyal(partyInitial) {
+function leastLoyal(partyInitial, data) {
 
-    var filteredByParty = listOfMembers(partyInitial);
+    var filteredByParty = listOfMembers(partyInitial, data);
     var people = sortByKey(filteredByParty, 'missed_votes_pct')
     people.reverse()
     var worstPeople = []
@@ -58,9 +104,9 @@ function leastLoyal(partyInitial) {
     return worstPeople;
 }
 
-function mostLoyal(partyInitial) {
+function mostLoyal(partyInitial, data) {
 
-    var filteredByParty = listOfMembers(partyInitial);
+    var filteredByParty = listOfMembers(partyInitial, data);
     var people = sortByKey(filteredByParty, 'missed_votes_pct')
     var bestPeople = []
     var counter = 0;
@@ -81,7 +127,7 @@ function sortByKey(array, key) {
     });
 }
 
-function atGlanceTable() {
+function atGlanceTable(data) {
     var atGlanceBody = document.getElementById("atGlance")
     atGlanceBody.innerHTML = ""
 
@@ -103,26 +149,26 @@ function atGlanceTable() {
 
             x++
             var column2 = row.insertCell(x);
-            if (i==2){
+            if (i == 2) {
                 column2.innerHTML = "No members in current congress"
-               
+
             } else {
                 column2.innerHTML = statistics.parties[i].numberInParty
             }
             x++
             var column3 = row.insertCell(x);
-            if (i==2){
+            if (i == 2) {
                 column3.innerHTML = "No members in current congress"
-               
+
             } else {
-                 column3.innerHTML = statistics.parties[i].votedWithParty
+                column3.innerHTML = statistics.parties[i].votedWithParty
             }
             x++
         }
     }
 }
 
-function leastEngagedTable() {
+function leastEngagedTable(data) {
     var leastEngaged = document.getElementById("leastEngaged")
     leastEngaged.innerHTML = ""
 
@@ -146,7 +192,7 @@ function leastEngagedTable() {
     }
 }
 
-function mostEngagedTable() {
+function mostEngagedTable(data) {
     var mostEngaged = document.getElementById("mostEngaged")
     mostEngaged.innerHTML = ""
 
@@ -170,8 +216,4 @@ function mostEngagedTable() {
     }
 }
 
-atGlanceTable()
-mostEngagedTable()
-leastEngagedTable()
-console.log(listOfMembers("D").length)
-console.log(listOfMembers("D").length)
+

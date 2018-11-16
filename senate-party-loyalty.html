@@ -4,43 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <title>sentate-loyality</title>
+     <link rel="stylesheet" href="congress-table-style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <div class="container">
-        <nav>
-        <div>
-            <div>
-                <a href="https://www.reddit.com/r/politics">TGIF</a>
-            </div>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li>
-                    <a href="https://www.propublica.org/">Congress 113</a>
-                    <ul>
-                        <li><a href="senate-data.html">Senate</a></li>
-                        <li><a href="house-data.html">House</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Attendance</a></li>
-                <ul>
-                    <li><a href="senate-attendance-statistics.html">Senate</a></li>
-                    <li><a href="house-attendance-statistics.html">House</a></li>
-                </ul>
 
-                <li>
-                    <a href="#">Party Loyalty</a>
-                    <ul>
-                        <li><a href="senate-party-loyalty.html">Senate</a></li>
-                        <li><a href="house-party-loyalty.html">House</a></li>
-                    </ul>
+    <nav class="shadow navbar navbar-expand-lg navbar-light bg-light darkBottom col-sm-4">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Congress 113
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="senate-data.html">Senate</a>
+                        <a class="dropdown-item" href="house-data.html">House</a>
+                        <a class="dropdown-item" href="#">Select a different Congress</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Attendence
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
+                        <a class="dropdown-item" href="house-attendance-statistics.html">House</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Loyalty
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                        <a class="dropdown-item" href="senate-party-loyalty.html">House</a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item"><a href="info@tgif.net" src="#"><img src="mail-icon.jpg" class="tiny" alt="mail"></a></li>
             </ul>
         </div>
     </nav>
+
+    <div class="container">
 
 
         <header>

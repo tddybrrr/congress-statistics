@@ -11,9 +11,11 @@
 </head>
 
 <body>
-    <nav class="shadow navbar navbar-expand-lg navbar-light bg-light darkBottom col-sm-2">
+    <nav class="shadow navbar-light bg-light darkBottom col-sm-3 offset-md-1">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            HOUSE
             <span class="navbar-toggler-icon"></span>
+            
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -31,46 +33,66 @@
                         <a class="dropdown-item" href="#">Select a different Congress</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Attendence
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
+                        <a class="dropdown-item" href="house-attendance-statistics.html">House</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Loyalty
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                        <a class="dropdown-item" href="senate-party-loyalty.html">House</a>
+                    </div>
+                </li>
+
                 <li class="nav-item"><a href="info@tgif.net" src="#"><img src="mail-icon.jpg" class="tiny" alt="mail"></a></li>
             </ul>
         </div>
     </nav>
+    
 
 
-
-    <div id="container" class="container">
+    <div id="container" class="container-fluid">
 
         <div class="row sticky-top">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3" id="house"><h2>HOUSE</h2></div>
-            <div class="col-sm 4 navcolor"></div>
+            <div class="col-sm-3" id="senate">
+               
+            </div>
+            <div class="col-sm-8 navcolor"></div>
 
 
         </div>
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-3 midnight"></div>
-        
-            <div id="filterBar" class="col-sm-8 d-flex flex-row align-items-end">
-                <div class="form-group col-sm-6">
+
+            <div id="filterBar" class="col-sm-8 d-flex">
+                <div class="form-group col-sm-6  offset-md-1">
                     <label class="huh" for="checkboxes"> PARTY</label>
-                    <div>
-                        <label for="">Republican</label>
-                        <input type="checkbox" name="politcal_party" id="R" value="R" checked>
-                        <label for="">Democrat</label>
-                        <input type="checkbox" name="politcal_party" id="D" value="D" checked>
-                        <label for="">Independent</label>
-                        <input type="checkbox" name="politcal_party" id="I" value="I" checked>
+                    <div class="d-flex flex-reverse justify-content-around">
+                        <div><label for="">Republican</label>
+                            <input type="checkbox" name="politcal_party" id="R" value="R" checked></div>
+                        <div><label for="">Democrat</label>
+                            <input type="checkbox" name="politcal_party" id="D" value="D" checked></div>
+                        <div> <label for="">Independent</label>
+                            <input type="checkbox" name="politcal_party" id="I" value="I" checked></div>
+
                     </div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <label class = "huh" for="exampleFormControlSelect1"> STATE</label>
-                    <select class="form-control" id="states" name="state">
+                <div class="form-group col-sm-3 col-auto ">
+                    <label class="huh" for="exampleFormControlSelect1"> STATE</label>
+                    <select class="form-control " id="states" name="state">
 
                     </select>
                 </div>
-
-
 
             </div>
         </div>
@@ -79,10 +101,9 @@
 
             </div>
             <div class="col-sm-3 stars">
-                <div class="col-sm-1">
 
-                </div>
             </div>
+            <div class="col-sm-1"></div>
             <div id="tableZone" class="col-sm-7 table"></div>
 
 

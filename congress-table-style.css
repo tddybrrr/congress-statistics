@@ -1,3 +1,9 @@
+select {
+  text-align: center;
+  text-align-last: center;
+  /* webkit*/
+}
+
 tr{
     border-radius: 6px; 
 }
@@ -12,9 +18,7 @@ table{
     margin-right: 7px; 
 }
 
-.darkBottom {
-    border: solid 5px dimgrey;
-}
+
 thead{
     font-weight: bold;
 }
@@ -36,8 +40,9 @@ thead{
     background-color: white;
 }
 .logo {
-    width: 170px;
-    filter:grayscale(95%);
+    width: 100px;
+    height: 60px;
+    
 }
 
 .navSep {
@@ -79,7 +84,7 @@ label{
 
 
 .navcolor {
-    border-bottom: solid red 50px;
+    background-color: red;
 }
 
 .midnight {
