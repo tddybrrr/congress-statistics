@@ -1,39 +1,38 @@
-body{
+body {
     font-family: times;
 }
 
-thead *{
+thead * {
     width: 10%;
 }
-.customStyleNav{
+
+.customStyleNav {
 
     border-bottom: 10px solid;
     border-top: 10px solid;
     padding: 15px;
     background-color: #BF0A30;
     border-image: url(white-stars.jpg) 80 round;
-    margin-bottom: 30px
-
+    margin-bottom: 8%;
 }
 
-.table th{
-   text-align: center;  
-   
+.table th {
+    text-align: center;
 }
 
-.table td{
-   text-align: center;   
+.table td {
+    text-align: center;
 }
 
-#filterZone{
+#filterZone {
     padding-bottom: 10px;
 }
 
-label{
+label {
     margin-bottom: 0px;
 }
 
-hr { 
+#aboutDivider {
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -42,11 +41,12 @@ hr {
     border-style: dashed inset;
     border-width: 5px;
     color: grey;
-} 
+}
 
-a{
+a {
     color: black !important;
 }
+
 .nixon-photo {
     width: 100%;
     height: auto;
@@ -56,4 +56,28 @@ a{
     width: 90%;
     height: auto;
     filter: grayscale(100%)
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.tableLeft {
+   border-bottom: solid black 3px;
+    border-top: solid black 3px;
+}
+
+.tableRight {
+   border-bottom: solid black 3px;
+    border-top: solid black 3px;
+}
+
+.tableBorders {
+    border-bottom: solid black 3px;
+    border-top: solid black 3px;
+    margin-bottom: 8%;
+}
+#accordion{
+    margin-bottom: 20%;
 }

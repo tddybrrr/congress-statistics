@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <title>house-attendance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel="stylesheet" href="stylish.css">
+    <link rel="stylesheet" href="stylish.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-   
-   <nav class="navbar navbar-expand navbar-light sticky-top customStyleNav" >
-      
+
+    <nav class="navbar navbar-expand navbar-light sticky-top customStyleNav">
+
         <div class="navbar-collapse d-flex flex-row justify-content-around" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                 <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Congress
                     </a>
@@ -27,45 +27,45 @@
                         <a class="dropdown-item" href="house-data.html">House</a>
                         <a class="dropdown-item" href="#">Select a different Congress</a>
                     </div>
-                    
+
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Attendence
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
+                        <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
                         <a class="dropdown-item" href="house-attendance-statistics.html">House</a>
                     </div>
-                    
+
                 </li>
-                 <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Loyality
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
-                        <a class="dropdown-item" href="senate-party-loyalty.html">House</a>
+                        <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                        <a class="dropdown-item" href="house-party-loyalty.html">House</a>
                     </div>
-                    
+
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
-       
+
 
         <!--Table container-->
         <div>
-            <h2>Attendance</h2>
+            <h2 class="text-center">Attendance</h2>
             <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
 
             <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
 
             <h2 id="house">House at a glance</h2>
-            <table class = "table">
+            <table class="table tableBorders table-hover ">
                 <thead>
                     <tr>
                         <th>Party</th>
@@ -73,7 +73,7 @@
                         <th>% Voted with Prty</th>
                     </tr>
                 </thead>
-                <tbody id = "atGlance">
+                <tbody id="atGlance">
                     <tr>
                         <td>Republican</td>
                         <td>--</td>
@@ -91,101 +91,105 @@
                     </tr>
                 </tbody>
             </table>
-
-            <h2>Least Engaged (Bottom 10% Attendance)</h2>
-            <table class = "table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody  id = "leastEngaged">
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Most Engaged (Top 10% Attendance)</h2>
-            <table class = "table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody id = "mostEngaged">
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                </tbody>
-            </table>
-
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2 class="text-center">Least Engaged (Bottom 10% Attendance)</h2>
+                    <table class="table tableBorders table-hover ">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Missed Votes</th>
+                                <th>% Missed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leastEngaged">
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="text-center">Most Engaged (Top 10% Attendance)</h2>
+                    <table class="table tableBorders table-hover ">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Missed Votes</th>
+                                <th>% Missed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mostEngaged">
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
-<!--         <script src="/pro-congress-113-house.js"></script>-->
+       <footer class="jumbotron d-flex flex-column align-items-center"><h2 >@2016 TGIF | All Rights Reserved</h2> <img src="uncle-sam-hat.png" alt="" class="logo"></footer>
 
         <script src="attendance-functions.js"></script>
 
