@@ -3,132 +3,120 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>senate-113</title>
-    <link rel="stylesheet" href="congress-table-style.css">
+    <title>Senate-113</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylish.css">
 
 </head>
 
 <body>
-    <div id="container" class="container-fluid">
 
-        <div class="row sticky-top">
-
-            <div class="col-sm-3 offset-md-1" id="senate">
-
-            </div>
-
-
-         
-            <a href="#" class="col-sm-8 navcolor d-flex justify-content-end"><img src="uncle-sam-hat.png" alt="logo" class="logo col-sm-1 navcolor"></a>
-
-
-
-        </div>
-        <div class="row">
-            <nav class="shadow navbar-light bg-light darkBottom col-sm-2">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            SENATE
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <nav class="navbar navbar-expand navbar-light sticky-top customStyleNav" >
+      
+        <div class="navbar-collapse d-flex flex-row justify-content-around" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Congress 113
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Congress
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="senate-data.html">Senate</a>
                         <a class="dropdown-item" href="house-data.html">House</a>
                         <a class="dropdown-item" href="#">Select a different Congress</a>
                     </div>
+                    
                 </li>
+                
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Attendence
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
+                      <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
                         <a class="dropdown-item" href="house-attendance-statistics.html">House</a>
                     </div>
+                    
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Loyalty
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Loyality
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                          <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
                         <a class="dropdown-item" href="senate-party-loyalty.html">House</a>
                     </div>
+                    
                 </li>
-
-
             </ul>
         </div>
     </nav>
-            <div class="col-sm-2 midnight"></div>
 
-            <div id="filterBar" class="col-sm-8 d-flex">
-                <div class="form-group col-sm-6  offset-md-1">
-                    <label class="huh" for="checkboxes"> PARTY</label>
-                    <div class="d-flex flex-reverse justify-content-around">
-                        <div><label for="">Republican</label>
-                            <input type="checkbox" name="politcal_party" id="R" value="R" checked></div>
-                        <div><label for="">Democrat</label>
-                            <input type="checkbox" name="politcal_party" id="D" value="D" checked></div>
-                        <div> <label for="">Independent</label>
-                            <input type="checkbox" name="politcal_party" id="I" value="I" checked></div>
 
-                    </div>
+    <div id="senate" class="container">
+
+        <div id="table">
+
+            <div id="filterZone" class="d-flex justify-content-center ">
+                <div class="col-sm-5">
+                    <label for="R">REPUBLICANS</label>
+                    <input type="checkbox" v-model="checkedParties" value="R" id="R">
+                    
+                     <label for="D">DEMOCRATS</label>
+                    <input type="checkbox" v-model="checkedParties" value="D" id="D">
+                    
+                     <label for="I">INDEPENDENTS</label>
+                    <input type="checkbox" v-model="checkedParties" value="I" id="I">
+                    
                 </div>
-                <div class="form-group col-sm-3 col-auto ">
-                    <label class="huh" for="exampleFormControlSelect1"> STATE</label>
-                    <select class="form-control " id="states" name="state">
-
-                    </select>
-                </div>
+                <select name="mystates" v-model="selectedState" class="col-sm-2">
+                    <option value=''>Please select one</option>
+                    <option v-for="state in usStates" v-bind:value="state.abbreviation"> {{ state.name }} </option>
+                </select>
 
             </div>
+
+            <table class="table table-hover table-sm">
+
+                <thead  class="thead-dark">
+                    <th style="width: 20%">NAME</th>
+                    <th style="width: 20">PARTY</th>
+                    <th style="width: 20%">STATE</th>
+                    <th style="width: 20%">YEARS IN OFFICE</th>
+                    <th style="width: 20%">% VOTES W/ PARTY</th>
+
+                </thead>
+                <tbody>
+
+                    <tr v-for="member in filterSenators">
+                        <td> {{ member.first_name }} {{ member.last_name }} </td>
+                        <td> {{ member.party }} </td>
+                        <td> {{ member.state }} </td>
+                        <td> {{ member.seniority }} </td>
+                        <td> {{ member.votes_with_party_pct }} </td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        <footer class="jumbotron"><h2 class="text-center">@2016 TGIF | All Rights Reserved</h2></footer>
+
         </div>
-        <div class="row padder">
-            <div class="col-sm-2">
-
-            </div>
-            <div class="col-sm-2 stars">
-
-            </div>
-            <div class="col-sm-1"></div>
-            <div id="tableZone" class="col-sm-7 table"></div>
-
-
-        </div>
-
-        <div class="container jumbotron">
-            <div class="col-sm-4"><a href="info@tgif.net" src="#"><img src="mail-icon.jpg" class="tiny" alt="mail"></a></div>
-
-            <div class="col-sm-4">
-                <h1 class="footie">@2018 TGIF all rights reserved.</h1>
-            </div>
-
-        </div>
 
 
 
-        <script src="US-states.js"></script>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-        <script src="table-power.js"> </script>
 
     </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="congress-data-vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
