@@ -1,6 +1,6 @@
 if (document.getElementById("senate") == null) {
 
-    fetch('https://api.propublica.org/congress/v1/115/house/members.json', {
+    fetch('https://api.propublica.org/congress/v1/113/house/members.json', {
             headers: new Headers({
                 "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
             })
@@ -20,7 +20,7 @@ if (document.getElementById("senate") == null) {
 
 
 } else {
-    fetch('https://api.propublica.org/congress/v1/115/senate/members.json', {
+    fetch('https://api.propublica.org/congress/v1/113/senate/members.json', {
             headers: new Headers({
                 "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
             })

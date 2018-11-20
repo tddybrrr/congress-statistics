@@ -14,8 +14,13 @@ var attendance = new Vue({
             var idealCount = people.length * .1
 
             for (i = 0; i < idealCount; i++) {
-                bestPeople.push(people[i])
+                
+                if (people[i].missed_votes_pct !== 0){
+                     bestPeople.push(people[i])
+                }
+               
             }
+            console.log(people[idealCount+1].missed_votes_pct)
             return bestPeople;
         },
 
@@ -28,7 +33,9 @@ var attendance = new Vue({
             var idealCount = people.length * .1;
 
             for (i = 0; i < idealCount; i++) {
-                worstPeople.push(people[i])
+                if (people[i].missed_votes_pct !== 0){
+                    worstPeople.push(people[i])
+                }
             }
             return worstPeople;
         },
@@ -42,8 +49,9 @@ var attendance = new Vue({
         },
         totalDemocrats() {
             return this.members.filter(each => {
+                
                 return each.party == "D"
-
+                
             })
 
         },
@@ -68,7 +76,10 @@ var attendance = new Vue({
         totalPercentage(array){
             var totes = 0;
             for (i=0; i<array.length; i++){
-                totes+=array[i].votes_with_party_pct;
+                if (array[i].votes_with_party_pct !== 0){
+                    totes+=array[i].votes_with_party_pct;
+                }
+                
             }
             return (totes/array.length).toPrecision(4);
         }
@@ -78,7 +89,7 @@ var attendance = new Vue({
 
 if (document.getElementById("senate") == null) {
 
-    fetch('https://api.propublica.org/congress/v1/115/house/members.json', {
+    fetch('https://api.propublica.org/congress/v1/113/house/members.json', {
             headers: new Headers({
                 "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
             })
@@ -94,7 +105,7 @@ if (document.getElementById("senate") == null) {
 
 
 } else {
-    fetch('https://api.propublica.org/congress/v1/115/senate/members.json', {
+    fetch('https://api.propublica.org/congress/v1/113/senate/members.json', {
             headers: new Headers({
                 "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
             })
