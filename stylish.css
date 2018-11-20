@@ -1,3 +1,15 @@
+footer.blockquote-footer{
+    color: white;
+}
+blockquote.blockquote{
+    color:white;
+}
+a.nav-link{
+    font-size: 23px;
+    letter-spacing: .5px;
+    margin-right: 10px;
+}
+
 body {
     font-family: times;
 }
@@ -13,7 +25,7 @@ thead * {
     padding: 15px;
     background-color: #BF0A30;
     border-image: url(white-stars.jpg) 80 round;
-    margin-bottom: 8%;
+    margin-bottom: 5%;
 }
 
 .table th {
@@ -64,20 +76,26 @@ a {
 }
 
 .tableLeft {
-   border-bottom: solid black 3px;
+    border-bottom: solid black 3px;
     border-top: solid black 3px;
 }
 
 .tableRight {
-   border-bottom: solid black 3px;
+    border-bottom: solid black 3px;
     border-top: solid black 3px;
 }
 
 .tableBorders {
     border-bottom: solid black 3px;
     border-top: solid black 3px;
-    margin-bottom: 8%;
+    margin-bottom: 4%;
+    margin-top: 4%;
 }
-#accordion{
+
+#accordion {
     margin-bottom: 20%;
+}
+p.lead{
+  
+    margin-bottom: 3%;
 }

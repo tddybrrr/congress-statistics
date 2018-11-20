@@ -11,14 +11,14 @@
 
 <body>
 
-    <nav class="navbar navbar-expand navbar-light sticky-top customStyleNav" >
-      
-        <div class="navbar-collapse d-flex flex-row justify-content-center" id="navbarNavDropdown">
+    <nav class="navbar navbar-expand navbar-light sticky-top customStyleNav">
+
+        <div class="navbar-collapse d-flex flex-row justify-content-around" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                 <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Congress
                     </a>
@@ -27,30 +27,31 @@
                         <a class="dropdown-item" href="house-data.html">House</a>
                         <a class="dropdown-item" href="#">Select a different Congress</a>
                     </div>
-                    
+
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Attendence
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
+                        <a class="dropdown-item" href="senate-attendance-statistics.html">Senate</a>
                         <a class="dropdown-item" href="house-attendance-statistics.html">House</a>
                     </div>
-                    
+
                 </li>
-                 <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Loyality
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                        <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
                         <a class="dropdown-item" href="house-party-loyalty.html">House</a>
                     </div>
-                    
+
                 </li>
             </ul>
+            <blockquote class="blockquote font-italic">"Democracy Dies In the Dark"<footer class="blockquote-footer">The Washington Post</footer></blockquote>
         </div>
     </nav>
 
@@ -63,13 +64,13 @@
                 <div class="col-sm-5">
                     <label for="R">REPUBLICANS</label>
                     <input type="checkbox" v-model="checkedParties" value="R" id="R">
-                    
-                     <label for="D">DEMOCRATS</label>
+
+                    <label for="D">DEMOCRATS</label>
                     <input type="checkbox" v-model="checkedParties" value="D" id="D">
-                    
-                     <label for="I">INDEPENDENTS</label>
+
+                    <label for="I">INDEPENDENTS</label>
                     <input type="checkbox" v-model="checkedParties" value="I" id="I">
-                    
+
                 </div>
                 <select name="mystates" v-model="selectedState" class="col-sm-2">
                     <option value=''>Please select one</option>
@@ -80,7 +81,7 @@
 
             <table class="table table-hover table-sm">
 
-                <thead  class="thead-dark">
+                <thead class="thead-dark">
                     <th>NAME</th>
                     <th>PARTY</th>
                     <th>STATE</th>
@@ -103,7 +104,9 @@
 
             </table>
 
-   <footer class="jumbotron d-flex flex-column align-items-center"><h2 >@2016 TGIF | All Rights Reserved</h2> <img src="uncle-sam-hat.png" alt="" class="logo"></footer>
+            <footer class="jumbotron d-flex flex-column align-items-center">
+                <h2>@2016 TGIF | All Rights Reserved</h2> <a href="#"><img src="uncle-sam-hat.png" alt="" class="logo"></a>
+            </footer>
 
         </div>
 

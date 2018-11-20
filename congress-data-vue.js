@@ -3,12 +3,9 @@ var sampleTable = new Vue({
     el: "#table",
     data: {
 
-
-
         selectedState: '',
 
         checkedParties: [],
-
 
         usStates: [
 
@@ -222,42 +219,21 @@ var sampleTable = new Vue({
         ],
 
         filteredMembers: []
-
-
     },
 
-    methods: {
-        toggle: function (partyInitial) {
-            if (partyInitial == 'D') {
-                this.D = !this.D
-            } else if (partyInitial == 'R') {
-                this.R = !this.R
-            } else if (partyInitial == 'I') {
-                this.I = !this.I
-            } else {
-                console.log("choose a valid party")
-            }
-        }
-    },
-
-  
     computed: {
         filterSenators() {
             return this.members.filter(senator => {
-                 
-                 var partyFilter = this.checkedParties.length == 0 || this.checkedParties.includes(senator.party);
-                 
+
+                var partyFilter = this.checkedParties.length == 0 || this.checkedParties.includes(senator.party);
+
                 var stateFilter = this.selectedState == "" || this.selectedState == senator.state;
-                
+
                 return partyFilter && stateFilter;
             })
-
         }
-
     }
-
 })
-
 
 
 if (document.getElementById("senate") == null) {
