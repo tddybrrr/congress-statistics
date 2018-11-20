@@ -14,12 +14,10 @@ var loyalty = new Vue({
             var idealCount = people.length * .1
 
             for (i = 0; i < idealCount; i++) {
-                if (people[i].total_votes > 0){
+                if (people[i].total_votes > 0) {
                     bestPeople.push(people[i])
                 }
-                
             }
-           
             return bestPeople;
         },
 
@@ -32,11 +30,11 @@ var loyalty = new Vue({
             var idealCount = people.length * .1;
 
             for (i = 0; i < idealCount; i++) {
-                if (people[i].total_votes > 0){
+                if (people[i].total_votes > 0) {
                     bestPeople.push(people[i])
                 }
             }
-             
+
             return bestPeople;
         },
         totalRepublicans() {
@@ -71,38 +69,41 @@ var loyalty = new Vue({
             }
             return (totes / array.length).toPrecision(4);
         }
+    },
+
+    created: function () {
+
+        if (document.getElementById("senate") == null) {
+
+            fetch('https://api.propublica.org/congress/v1/113/house/members.json', {
+                    headers: new Headers({
+                        "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
+                    })
+                })
+                .then(response => {
+
+                    return response.json()
+                })
+                .then(data => {
+
+                    this.members = data.results[0].members
+                })
+
+        } else {
+            fetch('https://api.propublica.org/congress/v1/113/senate/members.json', {
+                    headers: new Headers({
+                        "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
+                    })
+                })
+                .then(response => {
+
+                    return response.json()
+                })
+                .then(data => {
+
+                    this.members = data.results[0].members
+                })
+        }
     }
 })
 
-
-if (document.getElementById("senate") == null) {
-
-    fetch('https://api.propublica.org/congress/v1/113/house/members.json', {
-            headers: new Headers({
-                "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
-            })
-        })
-        .then(function (response) {
-
-            return response.json()
-        })
-        .then(function (data) {
-
-            loyalty.members = data.results[0].members
-        })
-
-} else {
-    fetch('https://api.propublica.org/congress/v1/113/senate/members.json', {
-            headers: new Headers({
-                "X-API-Key": "VoUTxAXwkKdNuARhtuxtZnGwGaFZslYOMHD32Nw0"
-            })
-        })
-        .then(function (response) {
-            return response.json()
-        })
-        .then(function (data) {
-
-            loyalty.members = data.results[0].members
-
-        })
-}
